@@ -1,5 +1,4 @@
 const app = require("./app");
-const mongoose = require("mongoose");
 const connectDb = require("./config/database");
 const dotenv = require("dotenv").config({ path: "config/.env" });
 //uncaught error
