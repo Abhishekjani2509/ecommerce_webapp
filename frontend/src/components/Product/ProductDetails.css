@@ -1,5 +1,5 @@
 .ProductDetails {
-  background-color: rgb(171, 162, 162);
+  background-color: rgb(255, 255, 255);
   width: 100vw;
   max-width: 100%;
   padding: 6vmax;
@@ -169,7 +169,6 @@
 
 .reviewCard {
   flex: none;
-
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
   border: 1px solid rgba(56, 56, 56, 0.116);
   width: 30vmax;
