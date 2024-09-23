@@ -3,6 +3,7 @@ class Apifeature {
     this.query = query;
     this.queryStr = queryStr;
   }
+
   search() {
     const keyword = this.queryStr.keyword
       ? {
@@ -15,6 +16,7 @@ class Apifeature {
     this.query = this.query.find({ ...keyword });
     return this;
   }
+
   filter() {
     const queryCopy = { ...this.queryStr };
     const removeKeyword = ["keyword", "page", "limit"];
@@ -24,6 +26,7 @@ class Apifeature {
     this.query = this.query.find(JSON.parse(queryStr));
     return this;
   }
+
   pagination(resultPerPage) {
     const currPage = Number(this.queryStr.page) || 1;
     const skip = resultPerPage * (currPage - 1);
@@ -31,4 +34,5 @@ class Apifeature {
     return this;
   }
 }
+
 module.exports = Apifeature;

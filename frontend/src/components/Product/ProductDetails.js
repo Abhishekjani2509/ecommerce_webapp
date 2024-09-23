@@ -8,6 +8,7 @@ import ReactStars from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader.js";
 import { useAlert } from "react-alert";
+import MetaData from "../layout/MetaData.js";
 
 const ProductDetails = () => {
   const alert = useAlert();
@@ -24,6 +25,7 @@ const ProductDetails = () => {
     }
     dispatch(getProductDetails(id));
   }, [dispatch, id, error, alert]);
+  // }, [dispatch, id, error]);
 
   const options = {
     edit: false,
@@ -40,6 +42,7 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <>
+          {product && <MetaData title={`${product.name} -- Ecommerce`} />}
           <div className="ProductDetails">
             <div>
               {/* <Carousel> */}
