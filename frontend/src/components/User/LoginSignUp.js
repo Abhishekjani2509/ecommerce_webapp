@@ -5,11 +5,11 @@ import { MdLockOpen, MdMailOutline } from "react-icons/md";
 import FaceIcon from "@mui/icons-material/Face";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { clearErrors, login } from "../../actions/userAction";
+import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import { useNavigate } from "react-router-dom";
 
-const LoginSignup = ({ history }) => {
+const LoginSignup = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ const LoginSignup = ({ history }) => {
     myForm.set("email", email);
     myForm.set("password", password);
     myForm.set("avatar", avatar);
-    console.log("SignUp Submitted!");
+    dispatch(register(myForm));
   };
 
   const registerDataChange = (e) => {
@@ -73,7 +73,7 @@ const LoginSignup = ({ history }) => {
     if (isAuthenticated) {
       navigate("/account");
     }
-  }, [dispatch, error, alert, isAuthenticated, history]);
+  }, [dispatch, error, alert, isAuthenticated, navigate]);
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
