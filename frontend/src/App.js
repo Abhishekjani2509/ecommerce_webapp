@@ -8,6 +8,7 @@ import Search from "./components/Product/Search.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import webFont from "webfontloader";
 import React from "react";
+import LoginSignUp from "./components/User/LoginSignUp.js";
 
 function App() {
   React.useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="/products/:keyword" Component={Products} />
           <Route exact path="/search" Component={Search} />
+          <Route exact path="/login" Component={LoginSignUp} />
         </Routes>
         <Footer />
       </Router>
