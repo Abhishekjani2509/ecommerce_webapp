@@ -46,7 +46,7 @@ const Products = () => {
       dispatch(clearErrors);
     }
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
-  }, [dispatch, keyword, currentPage, price, category, ratings, error]);
+  }, [dispatch, keyword, currentPage, price, category, ratings, error, alert]);
 
   return (
     <>
